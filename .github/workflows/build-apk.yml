@@ -6,6 +6,9 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+permissions:
+  contents: write   # necesario para publicar en Releases
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,14 +22,16 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Preparar Android SDK
-        uses: android-actions/setup-android@v3
+      # Los runners de GitHub ya traen el Android SDK instalado y con
+      # las licencias aceptadas, así que no hace falta instalarlo aparte.
+      - name: Aceptar licencias del SDK (por si acaso)
+        run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
 
       - name: Dar permiso al gradlew
         run: chmod +x ./gradlew
 
       - name: Compilar el APK (release)
-        run: ./gradlew assembleRelease --no-daemon
+        run: ./gradlew assembleRelease --no-daemon --stacktrace
 
       - name: Subir el APK como resultado descargable
         uses: actions/upload-artifact@v4
