@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f172a"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="🛡️"
+            android:textSize="56sp"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MiRespaldo Familiar"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Permite que la PC de la casa pueda explorar y respaldar los archivos de este teléfono, con tu permiso. Solo funciona dentro de tu red WiFi."
+            android:textColor="#94a3b8"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de este teléfono"
+            android:textColor="#e2e8f0"
+            android:textSize="13sp"
+            android:paddingBottom="4dp" />
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej: Celular de María"
+            android:textColorHint="#64748b"
+            android:textColor="#ffffff"
+            android:background="#1e293b"
+            android:padding="14dp"
+            android:inputType="text"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección IP de la PC (la que muestra el programa en la PC)"
+            android:textColor="#e2e8f0"
+            android:textSize="13sp"
+            android:paddingBottom="4dp" />
+        <EditText
+            android:id="@+id/etPcIp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="192.168.0.100"
+            android:textColorHint="#64748b"
+            android:textColor="#ffffff"
+            android:background="#1e293b"
+            android:padding="14dp"
+            android:inputType="text"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="¿Cuándo quieres compartir?"
+            android:textColor="#e2e8f0"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/grupoModo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <RadioButton
+                android:id="@+id/rbSiempre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Compartir SIEMPRE (automático, sin tocar nada)"
+                android:textColor="#ffffff"
+                android:buttonTint="#22c55e"
+                android:padding="10dp" />
+
+            <RadioButton
+                android:id="@+id/rbManual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Compartir SOLO cuando yo lo active"
+                android:textColor="#ffffff"
+                android:buttonTint="#22c55e"
+                android:checked="true"
+                android:padding="10dp" />
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/swActivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Compartir ahora"
+            android:textColor="#e2e8f0"
+            android:thumbTint="#22c55e"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR Y PERMITIR ACCESO"
+            android:textColor="#042713"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:backgroundTint="#22c55e"
+            android:padding="16dp" />
+
+        <TextView
+            android:id="@+id/txtEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⏸️ Sin configurar"
+            android:textColor="#94a3b8"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:paddingTop="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Puedes cambiar o apagar esto cuando quieras abriendo esta app."
+            android:textColor="#64748b"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:paddingTop="20dp" />
+
+    </LinearLayout>
+</ScrollView>
